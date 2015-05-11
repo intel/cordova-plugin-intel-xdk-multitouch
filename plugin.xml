@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+  id="com.intel.xdk.multitouch"
+  version="0.0.1">
+  <name>Intel XDK Multitouch</name>
+  <description>Intel XDK Multitouch Plugin</description>
+  <license>Apache 2.0</license>
+  <keywords>intel,xdk,multitouch</keywords>
+
+</plugin>
