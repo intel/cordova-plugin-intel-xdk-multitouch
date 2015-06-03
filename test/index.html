@@ -1,0 +1,130 @@
+<!DOCTYPE html><!--HTML5 doctype-->
+<!--
+Copyright 2015 Intel Corporation
+
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file 
+except in compliance with the License. You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software distributed under the 
+License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, 
+either express or implied. See the License for the specific language governing permissions 
+and limitations under the License
+-->
+
+<html>
+
+<head>
+
+<title>Your New Application</title>
+
+<meta http-equiv="Content-type" content="text/html; charset=utf-8"> 
+
+<script type="text/javascript">
+
+/* This code prevents users from dragging the page */
+var preventDefaultScroll = function(event) {
+    event.preventDefault();
+    window.scroll(0,0);
+    return false;
+};
+
+function handleInput(type) {
+    console.log('touches:'+event.touches.length+' targetTouches:'+event.targetTouches.length+' changedTouches:'+event.changedTouches.length);
+    console.log(type);
+}
+
+
+/* This code is used to run as soon as appMobi activates */
+var onDeviceReady=function(){
+    //turn on multiTouch for Android
+    try{    
+        intel.xdk.multitouch.enable();
+    }
+    catch(e){}
+};
+
+//document.addEventListener("appMobi.device.ready",onDeviceReady,false);    
+document.addEventListener('deviceready', onDeviceReady, false);
+
+</script>
+
+<style type="text/css">
+    * {
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: -moz-none;
+        -o-user-select: none;
+        user-select: none;
+    }
+    #Leftbutn {
+        position:absolute;
+        right:90px;
+        height:96px;
+        width:77px;
+        bottom:12px;
+        color:white;
+        background:green;
+        opacity:.4;
+        z-index:10;
+    }
+    #Rightbutn {
+        position:absolute;
+        right:10px;
+        height:96px;
+        width:77px;
+        bottom:12px;
+        color:white;
+        background:black;
+        opacity:.4;
+        z-index:10;
+    }
+    #Jumpbutn {
+        position:absolute;
+        left:10px;
+        height:96px;
+        width:77px;
+        bottom:12px;
+        color:white;
+        background:white;
+        opacity:.4;
+        z-index:10;
+    }
+    #Shootbutn {
+        position:absolute;
+        left:90px;
+        height:96px;
+        width:77px;
+        bottom:12px;
+        color:white;
+        background:yellow;
+        opacity:.4;
+        z-index:10;
+    }
+</style>
+
+</head>
+
+<body id="body" style='background:blue'><!-- ontouchmove="handleInput('bMove');" ontouchstart="handleInput('bDown');" ontouchend="handleInput('bUp');"-->
+
+<div id="div1" style='position:absolute;left:0;top:0;background:red;height:50%;width:100%'>
+</div>
+<!--<div id="Leftbutn"></div>
+<div id="Rightbutn"></div>
+<div id="Jumpbutn"></div>
+<div id="Shootbutn"></div>-->
+    <div id="Leftbutn" ontouchstart="handleInput('lDown');" ontouchmove="handleInput('lMove');" ontouchend="handleInput('lUp');" ></div>
+    <div id="Rightbutn" ontouchstart="handleInput('rDown');" ontouchmove="handleInput('rMove');" ontouchend="handleInput('rUp');"></div>
+    <div id="Jumpbutn" ontouchstart="handleInput('jDown');" ontouchmove="handleInput('jMove');" ontouchend="handleInput('jUp');" ></div>
+    <div id="Shootbutn" ontouchstart="handleInput('sDown');" ontouchmove="handleInput('sMove');" ontouchend="handleInput('sUp');"></div>
+    <script type="text/javascript" src="cordova.js"></script>
+</body>
+
+</html>
+
+
+</body>
+
+</html>
+
