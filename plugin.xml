@@ -43,8 +43,15 @@ and limitations under the License
        <source-file src="src/wp8/Multitouch.cs" />
     </platform>
 
-    <!-- windows8 -->
+    <!-- windows -->
     <platform name="windows8">
+        <js-module src="src/windows8/multitouchProxy.js" name="multitouchProxy">
+            <clobbers target=""></clobbers>
+        </js-module>
+    </platform>
+
+    <!-- windows8 -->
+    <platform name="windows">
         <js-module src="src/windows8/multitouchProxy.js" name="multitouchProxy">
             <clobbers target=""></clobbers>
         </js-module>
